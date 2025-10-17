@@ -1,0 +1,37 @@
+:root {
+  --Color-bg-container: #fff;
+  /*Input*/
+  --Components-Input-Global-ColorText: rgba(0, 0, 0, 0.88);
+  --Components-Input-Global-ColorTextPlaceholder: rgba(0, 0, 0, 0.25);
+  --Components-Input-Global-colorBorder: #d9d9d9;
+  --Components-Input-Global-colorBgContainer: #ffffff;
+
+  --Components-Input-Component-paddingBlockLG: 0.7rem;
+
+  --Components-Input-Global-borderRadiusLG: 0.8rem;
+
+  /*Button*/
+  --Components-Button-Global-colorPrimary: #1677ff;
+  --Components-Button-Component-primaryColor: #FFFFFF;
+  --Components-Button-Global-colorBgContainerDisabled: rgba(0, 0, 0, 0.04);
+  --Components-Button-Component-borderColorDisabled: #d9d9d9;
+  --Components-Button-Global-colorTextDisabled: rgba(0, 0, 0, 0.25);
+
+  --Components-Button-Component-paddingInlineLG: 1.5rem;
+  --Components-Button-Component-paddingBlockLG: 0.8rem;
+
+  --Components-Button-Global-borderRadiusLG: 0.8rem;
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}

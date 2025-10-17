@@ -1,0 +1,20 @@
+@import url('./fonts/font.css');
+@import url('./variables/globall.css');
+@import url('./reset.css');
+
+
+/*1rem - 10px */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  background-color: #f5f5f5;
+  font-family: 'SFProText', sans-serif;
+}

@@ -1,0 +1,14 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+
+  width: 44rem;
+  height: 37.2rem;
+
+  padding: 3.2rem;
+
+  background-color: var(--Color-bg-container);
+}

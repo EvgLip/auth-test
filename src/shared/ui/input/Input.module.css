@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  height: 4rem;
+
+  border: 1px solid var(--Components-Input-Global-colorBorder);
+  border-radius: var(--Components-Input-Global-borderRadiusLG);
+  background: var(--Components-Input-Global-colorBgContainer);
+}
+
+.input {
+  width: 100%;
+  padding: var(--Components-Input-Component-paddingBlockLG) 0px var(--Components-Input-Component-paddingBlockLG) 0px;
+  border: none;
+  outline: none;
+  color: var(--Components-Input-Global-ColorText);
+}
+
+.input::placeholder {
+  color: var(--Components-Input-Global-ColorTextPlaceholder);
+}
+
+.input:focus {
+  border: none;
+  outline: none;
+}
+
+.icon {
+  padding-left: 1.1rem;
+}
