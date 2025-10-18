@@ -1,0 +1,1 @@
+export { AuthenticationPageLazy as AuthenticationPage } from './ui/AuthenticationPageLazy';

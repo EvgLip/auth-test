@@ -1,12 +1,11 @@
-import AuthForm from '../features/auth-form/ui/AuthForm';
+import { RouterProvider } from 'react-router-dom';
+import { router } from '@/app/providers/router';
 
 
 function App()
 {
   return (
-    <div>
-      <AuthForm />
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
