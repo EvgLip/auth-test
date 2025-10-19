@@ -1,9 +1,10 @@
 import logo from '@/shared/assets/logo.svg';
 import emailIcon from '@/shared/assets/email.svg';
 import lockIcon from '@/shared/assets/lock.svg';
-import { Button, Input } from '@/shared/ui';
-import classes from './AuthForm.module.css';
+import { Button, HeadingList, Input, TypeOfAlign } from '@/shared/ui';
+import { Heading } from '@/shared/ui';
 
+import classes from './AuthForm.module.css';
 
 export default function AuthForm()
 {
@@ -12,7 +13,12 @@ export default function AuthForm()
     <form className={classes['auth-form']}>
       <img src={logo} alt='company logo' />
 
-      <h3>Sign in to your account to continue</h3>
+      <Heading
+        as={HeadingList.H3}
+        textAlign={TypeOfAlign.CENTER}
+      >
+        Sign in to your account to continue
+      </Heading>
 
       <Input
         name='email'

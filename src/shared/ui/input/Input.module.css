@@ -17,6 +17,8 @@
   border: none;
   outline: none;
   color: var(--Components-Input-Global-ColorText);
+
+  font-size: 1.6rem;
 }
 
 .input::placeholder {
