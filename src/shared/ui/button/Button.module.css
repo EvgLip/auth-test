@@ -21,3 +21,15 @@
   background: var(--Components-Button-Global-colorBgContainerDisabled);
   color: var(--Components-Button-Global-colorTextDisabled);
 }
+
+.size-m {
+  font: var(--font-m);
+}
+
+.size-l {
+  font: var(--font-l);
+}
+
+.size-xl {
+  font: var(--font-xl);
+}

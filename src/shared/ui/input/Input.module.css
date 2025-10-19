@@ -5,6 +5,9 @@
   gap: 0.6rem;
   width: 100%;
   height: 4rem;
+  /* overflow: hidden; */
+
+  position: relative;
 
   border: 1px solid var(--Components-Input-Global-colorBorder);
   border-radius: var(--Components-Input-Global-borderRadiusLG);
@@ -12,13 +15,13 @@
 }
 
 .input {
-  width: 100%;
+  width: 90%;
   padding: var(--Components-Input-Component-paddingBlockLG) 0px var(--Components-Input-Component-paddingBlockLG) 0px;
   border: none;
   outline: none;
   color: var(--Components-Input-Global-ColorText);
 
-  font-size: 1.6rem;
+  font-size: var(--font-size-m);
 }
 
 .input::placeholder {
@@ -32,4 +35,16 @@
 
 .icon {
   padding-left: 1.1rem;
+}
+
+.error-msg {
+  position: absolute;
+  top: -25%;
+  left: 5%;
+  padding: 0 5px;
+  z-index: 999;
+
+  font-size: 1.2rem;
+  color: #ff0000;
+  background: #fff;
 }

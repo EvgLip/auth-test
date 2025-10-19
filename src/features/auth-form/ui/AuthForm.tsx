@@ -5,9 +5,24 @@ import { Button, HeadingList, Input, TypeOfAlign } from '@/shared/ui';
 import { Heading } from '@/shared/ui';
 
 import classes from './AuthForm.module.css';
+import { useState, type ChangeEvent } from 'react';
 
 export default function AuthForm()
 {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  const emailHandler = (e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
+  const passwordHandler = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
+
+  const regex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+  const isEmail = regex.test(email);
+  const isPassword = password.length >= 8;
+
+  const emailValidation = () => { if (!isEmail) setEmailError('Некорректный email'); };
+  const passwordValidation = () => { if (!isPassword) setPasswordError('Пароль менее 8 символов'); };
 
   return (
     <form className={classes['auth-form']}>
@@ -26,6 +41,11 @@ export default function AuthForm()
         icon={emailIcon}
         placeholder='Email'
         autoComplete='off'
+        onChange={emailHandler}
+        value={email}
+        onBlur={emailValidation}
+        onFocus={() => setEmailError('')}
+        errorMassage={emailError}
       />
 
       <Input
@@ -34,11 +54,16 @@ export default function AuthForm()
         icon={lockIcon}
         placeholder='Password'
         autoComplete='off'
+        onChange={passwordHandler}
+        value={password}
+        onBlur={passwordValidation}
+        onFocus={() => setPasswordError('')}
+        errorMassage={passwordError}
       />
 
       <Button
         stretch
-        disabled
+        disabled={!(isEmail && isPassword)}
       >
         Log in
       </Button>
