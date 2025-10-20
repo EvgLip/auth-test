@@ -5,7 +5,8 @@
   align-items: center;
   gap: 1.6rem;
 
-  width: 44rem;
+  max-width: 44rem;
+  min-width: 37rem;
   height: 37.2rem;
 
   padding: 3.2rem;

@@ -24,8 +24,19 @@ export default function AuthForm()
   const emailValidation = () => { if (!isEmail) setEmailError('Некорректный email'); };
   const passwordValidation = () => { if (!isPassword) setPasswordError('Пароль менее 8 символов'); };
 
+  function handleSubmit(e: SubmitEvent<HTMLFormElement>)
+  {
+    e.preventDefault();
+
+    if (!isEmail || !isPassword) return;
+
+    // login(
+    //   { email, password },
+    //   { onSettled: () => { setEmail(''), setPassword(''); } }
+    // );
+  }
   return (
-    <form className={classes['auth-form']}>
+    <form className={classes['auth-form']} onSubmit={handleSubmit}>
       <img src={logo} alt='company logo' />
 
       <Heading
@@ -40,7 +51,7 @@ export default function AuthForm()
         type='email'
         icon={emailIcon}
         placeholder='Email'
-        autoComplete='off'
+        autoComplete='email'
         onChange={emailHandler}
         value={email}
         onBlur={emailValidation}
@@ -53,7 +64,7 @@ export default function AuthForm()
         type='password'
         icon={lockIcon}
         placeholder='Password'
-        autoComplete='off'
+        autoComplete='new-password'
         onChange={passwordHandler}
         value={password}
         onBlur={passwordValidation}
