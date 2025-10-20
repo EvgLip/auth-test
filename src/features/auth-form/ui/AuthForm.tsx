@@ -5,7 +5,7 @@ import { Button, HeadingList, Input, TypeOfAlign } from '@/shared/ui';
 import { Heading } from '@/shared/ui';
 
 import classes from './AuthForm.module.css';
-import { useState, type ChangeEvent } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 
 export default function AuthForm()
 {
@@ -24,7 +24,7 @@ export default function AuthForm()
   const emailValidation = () => { if (!isEmail) setEmailError('Некорректный email'); };
   const passwordValidation = () => { if (!isPassword) setPasswordError('Пароль менее 8 символов'); };
 
-  function handleSubmit(e: SubmitEvent<HTMLFormElement>)
+  function handleSubmit(e: FormEvent<HTMLFormElement>)
   {
     e.preventDefault();
 
