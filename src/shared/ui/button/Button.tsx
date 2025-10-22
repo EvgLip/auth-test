@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import classes from './Button.module.css';
 
 export const ButtonAppearanceList =
@@ -39,7 +39,7 @@ export function Button(props: ButtonProps)
 
   return (
     <button
-      className={classNames(classes.btn, className, classes[appearance], classes[size], { [classes.stretch]: stretch })}
+      className={clsx(classes.btn, className, classes[appearance], classes[size], { [classes.stretch]: stretch })}
       {...other}
     >
       {children}

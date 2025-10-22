@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import classNames from 'classnames';
+import clsx from 'clsx';
+
 import classes from './Heading.module.css';
 
 export const HeadingList =
@@ -40,7 +41,7 @@ export function Heading(props: HeadingProps)
     ...other
   } = props;
 
-  const cls = classNames(classes[as], classes[textAlign]);
+  const cls = clsx(classes[as], classes[textAlign]);
 
   switch (as)
   {

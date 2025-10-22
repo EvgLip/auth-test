@@ -10,7 +10,7 @@ interface User
 export function useLogin()
 {
   const queryClient = useQueryClient();
-  const { mutate: login, isPending } = useMutation(
+  const { mutate: login, isPending, data } = useMutation(
     {
       mutationFn(data: string) 
       {
@@ -19,7 +19,6 @@ export function useLogin()
       onSuccess: (data: User) =>
       {
         queryClient.setQueryData(['user'], data.user);
-        console.log('resp', data);
       },
       onError: (err) =>
       {
@@ -28,5 +27,5 @@ export function useLogin()
     }
   );
 
-  return { login, isPending };
+  return { login, isPending, data };
 }
