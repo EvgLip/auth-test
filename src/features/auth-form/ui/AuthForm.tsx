@@ -44,7 +44,7 @@ export default function AuthForm()
       <img src={logo} alt='company logo' />
 
       <Heading
-        as={HeadingList.H3}
+        As={HeadingList.H3}
         textAlign={TypeOfAlign.CENTER}
       >
         Sign in to your account to continue

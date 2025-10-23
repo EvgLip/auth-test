@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 import clsx from 'clsx';
 
 import classes from './Heading.module.css';
@@ -28,7 +28,7 @@ type Align = typeof TypeOfAlign[keyof typeof TypeOfAlign];
 interface HeadingProps
 {
   children: ReactNode;
-  as?: HeadingAs;
+  As?: Extract<keyof JSX.IntrinsicElements, HeadingAs>;
   textAlign?: Align;
 }
 
@@ -36,29 +36,15 @@ export function Heading(props: HeadingProps)
 {
   const {
     children,
-    as = HeadingList.H1,
+    As = HeadingList.H1,
     textAlign = TypeOfAlign.LEFT,
     ...other
   } = props;
 
-  const cls = clsx(classes[as], classes[textAlign]);
+  const cls = clsx(classes[As], classes[textAlign]);
 
-  switch (as)
-  {
-    case 'h1':
-      return <h1 className={cls} {...other}>{children}</h1>;
-    case 'h2':
-      return <h2 className={cls} {...other}>{children}</h2>;
-    case 'h3':
-      return <h3 className={cls} {...other}>{children}</h3>;
-    case 'h4':
-      return <h4 className={cls} {...other}>{children}</h4>;
-    case 'h5':
-      return <h5 className={cls} {...other}>{children}</h5>;
-    case 'h6':
-      return <h6 className={cls} {...other}>{children}</h6>;
-    default:
-      return <h1 className={cls} {...other}>{children}</h1>;
+  return (
+    <As className={cls} {...other}>{children}</As>
+  );
 
-  }
 }
