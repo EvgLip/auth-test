@@ -1,4 +1,4 @@
-import AuthForm from '@/features/auth-form/ui/AuthForm';
+import { AuthForm } from '@/features/auth-form/';
 
 export default function AuthenticationPage()
 {

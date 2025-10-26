@@ -1,22 +1,18 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import type { User } from '@/entities/user';
+import type { AuthData } from '../type/authData';
 
-interface User
-{
-  user: string;
-  token: string;
-  code: string;
-}
 
 export function useLogin()
 {
   const queryClient = useQueryClient();
   const { mutate: login, isPending, data } = useMutation(
     {
-      mutationFn(data: string) 
+      mutationFn(user: User) 
       {
-        return Promise.resolve({ user: data, token: 'token', code: '123456' });
+        return Promise.resolve({ user, token: 'token', authCode: '123456' });
       },
-      onSuccess: (data: User) =>
+      onSuccess: (data: AuthData) =>
       {
         queryClient.setQueryData(['user'], data.user);
       },

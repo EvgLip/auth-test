@@ -33,7 +33,9 @@ export default function AuthForm()
 
     if (!isEmail || !isPassword) return;
 
-    login(('user'),
+    const data = { email, password };
+
+    login((data),
       { onSettled: () => { console.log('login', email); setEmail(''); setPassword(''); } }
     );
   }
