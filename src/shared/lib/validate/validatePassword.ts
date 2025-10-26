@@ -1,6 +1,13 @@
-export function validatePassword(password: string): boolean
+export function validatePassword(password: string)
 {
-  if (password.length < 8) return false;
+  if (password.length < 8)
+    return {
+      success: false,
+      error: 'Password must be at least 8 characters long',
+    };
 
-  return true;
+  return {
+    success: true,
+    error: '',
+  };
 }

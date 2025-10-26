@@ -22,10 +22,10 @@ export default function AuthForm()
   const passwordHandler = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
 
   const isEmail = validateEmail(email);
-  const isPassword = validatePassword(password);
+  const { success: isPassword, error: passwordErrorMsg } = validatePassword(password);
 
-  const emailValidation = () => { if (!isEmail) setEmailError('Некорректный email'); };
-  const passwordValidation = () => { if (!isPassword) setPasswordError('Пароль менее 8 символов'); };
+  const emailValidation = () => { if (!isEmail) setEmailError('Incorrect email'); };
+  const passwordValidation = () => { if (!isPassword) setPasswordError(passwordErrorMsg); };
 
   function handleSubmit(e: FormEvent<HTMLFormElement>)
   {
