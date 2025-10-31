@@ -3,7 +3,7 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 import logo from '@/shared/assets/logo.svg';
 import emailIcon from '@/shared/assets/email.svg';
 import lockIcon from '@/shared/assets/lock.svg';
-import { Button, HeadingList, Input, TypeOfAlign } from '@/shared/ui';
+import { Button, HeadingLevel, Input, TypeOfAlign } from '@/shared/ui';
 import { Heading } from '@/shared/ui';
 import { useLogin } from '../model/hooks/useLogin';
 import { validateEmail } from '@/shared/lib/validate/validateEmail';
@@ -46,7 +46,7 @@ export default function AuthForm()
       <img src={logo} alt='company logo' />
 
       <Heading
-        As={HeadingList.H3}
+        As={HeadingLevel.H3}
         textAlign={TypeOfAlign.CENTER}
       >
         Sign in to your account to continue

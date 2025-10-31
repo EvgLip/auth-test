@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import classes from './Heading.module.css';
 
-export const HeadingList =
+export const HeadingLevel =
   {
     H1: 'h1',
     H2: 'h2',
@@ -13,12 +13,12 @@ export const HeadingList =
     H6: 'h6',
   } as const;
 
-type HeadingAs = typeof HeadingList[(keyof typeof HeadingList)];
+type HeadingAs = typeof HeadingLevel[(keyof typeof HeadingLevel)];
 
 export const TypeOfAlign =
   {
     CENTER: 'center',
-    JASTIFY: 'justify',
+    JUSTIFY: 'justify',
     LEFT: 'left',
     RIGHT: 'right',
   } as const;
@@ -31,17 +31,17 @@ interface HeadingProps
   As?: Extract<keyof JSX.IntrinsicElements, HeadingAs>;
   textAlign?: Align;
 }
-
+///////////////////////////
 export function Heading(props: HeadingProps)
 {
   const {
     children,
-    As = HeadingList.H1,
+    As = HeadingLevel.H1,
     textAlign = TypeOfAlign.LEFT,
     ...other
   } = props;
 
-  const cls = clsx(classes[As], classes[textAlign]);
+  const cls = clsx(classes[textAlign]);
 
   return (
     <As className={cls} {...other}>{children}</As>

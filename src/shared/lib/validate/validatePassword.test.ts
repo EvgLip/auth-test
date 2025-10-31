@@ -1,18 +1,29 @@
+import { describe, expect, test } from 'vitest';
 import { PASSWORD_VALIDATION_ERROR, validatePassword } from './validatePassword';
 
-describe('validatePassword',
+describe('Validate Password',
   function ()
   {
-
-    test('should return {success:true, error:""} for the valid password', () =>
+    test('should return the {success:true, error:""} with a valid password', () =>
     {
-      const expectedResult = { success: true, error: '' };
-      const password = 'Pass123#';
-      const result = validatePassword(password);
-
+      const result = validatePassword('Pass#123');
+      const expectedResult =
+      {
+        success: true,
+        error: ""
+      };
       expect(result).toEqual(expectedResult);
     });
-
-    test.todo('should return an error message for a password of less than 8 characters');
+    ////////////////////////////////////
+    test('should return an error with a password of less than 8 characters', () =>
+    {
+      const result = validatePassword('123');
+      const expectedResult =
+      {
+        success: false,
+        error: PASSWORD_VALIDATION_ERROR.length,
+      };
+      expect(result).toEqual(expectedResult);
+    });
   }
 );

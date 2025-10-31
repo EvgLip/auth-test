@@ -19,13 +19,24 @@ export function Input(props: InputProps)
 
   return (
     <>
-      <div className={classes.wrapper}>
-        <img className={classes.icon} src={icon} />
+      <div
+        className={classes.wrapper}
+        data-testid='wrapper'
+      >
+        {
+          icon &&
+          <img className={classes.icon} src={icon} />
+        }
         <input
           className={classes.input}
           {...other}
         />
-        <span className={classes['error-msg']}>{errorMassage}</span>
+        <span
+          className={classes['error-msg']}
+          data-testid='error-msg'
+        >
+          {errorMassage}
+        </span>
       </div>
     </>
   );
